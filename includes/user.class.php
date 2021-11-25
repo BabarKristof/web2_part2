@@ -18,20 +18,23 @@
           $fnev = $_POST["fnev"];
           $pw   = $_POST["pw"];
           $sql  = "
-            select fh_id, fh_szint
+            select fh_id, fh_szint,fh_jelszo,fh_fnev
             from ".MOTOR_FELHASZNALOK."
             where fh_fnev = :fnev
-                  and fh_jelszo = password(:pw);
           "; 
           $stmt = $conn->prepare($sql);
-          $stmt->execute(Array(':fnev' => $fnev, ':pw' => $pw));
+          $stmt->execute(Array(':fnev' => $fnev));
           if ($stmt->rowCount() != 0) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
+			$checkPwd=password_verify($pw,$row["fh_jelszo"]);
+			if($checkPwd == true){
             $this->userid = $row['fh_id'];
             if ($row['fh_szint'] == 2) $this->jogmaszk = "_1_";
             if ($row['fh_szint'] == 3) $this->jogmaszk = "__1";
             $_SESSION["userid"]   = $this->userid;
             $_SESSION["jogmaszk"] = $this->jogmaszk;
+            $_SESSION["fnev"] = $row['fh_fnev'];
+			}
           }
         } 
       }

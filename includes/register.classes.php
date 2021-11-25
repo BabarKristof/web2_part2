@@ -26,6 +26,12 @@ public function __construct(){
 	if(isset($_POST["regSub"]))
 	{
 		$fname=$_POST['fname'];
+		$pwd=$_POST['pwd'];
+		$pwdRe=$_POST['pwdRe'];
+		$fullname=$_POST['fullname'];
+		$email=$_POST['email'];
+		
+			$lastlogin=date('y-m-d h:i:s');
 	
 		$sql = ("SELECT fh_fnev FROM motor_felhasznalok WHERE fh_fnev = ?;");
 		$stmt = $conn->prepare($sql);
@@ -42,15 +48,9 @@ public function __construct(){
 		
 		
 		
-		if($resultCheck == 2){
+		if($resultCheck == 2 & $pwd == $pwdRe){
 		
-			$fname=$_POST['fname'];
-			$pwd=$_POST['pwd'];
-			$pwdRe=$_POST['pwdRe'];
-			$fullname=$_POST['fullname'];
-			$email=$_POST['email'];
-		
-			$lastlogin=date('y-m-d h:i:s');
+
 			
 			$hashedPwd = password_hash($pwd, PASSWORD_DEFAULT);
 			
