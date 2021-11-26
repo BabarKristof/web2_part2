@@ -1,5 +1,5 @@
 <?php
-  class User {
+  class User{
     private $userid;
     private $jogmaszk;
     
@@ -7,6 +7,7 @@
       //konstruktor
       global $conn;
       $this->userid = 0;
+      $this->rows = 0;
       $this->jogmaszk = "1__";
       if (isset($_SESSION["userid"]) and isset($_SESSION["jogmaszk"])){
         //belépett felhasználó
@@ -50,6 +51,7 @@
     public function GetUserid () {
       return $this->userid;
     }
+    
     
     public function GetJogmaszk() {
       return $this->jogmaszk;

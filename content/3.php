@@ -3,8 +3,8 @@
     header("location: ../index.php");
   }
 ?>
-      <div class="post">
         <h2 class="title">Regisztráció</h2>
+      <div class="post">
         <div style="clear: both;">&nbsp;</div>
         <div class="entry belepes">
           <form action="." method="post">
