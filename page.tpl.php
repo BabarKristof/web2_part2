@@ -8,6 +8,7 @@
   <link rel="stylesheet" type="text/css" href="style/superfish.css" media="screen">
   <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
   <script type="text/javascript" src="js/superfish.js"></script>
+  
   <script type="text/javascript">
     // initialise plugins
     jQuery(function(){
@@ -20,8 +21,9 @@
     <div id="header-wrapper">
       <div id="header">
         <div id="logo">
-          <h1><a href="."><span>web</span>2</a></h1>
-          <p> design by <a href="http://templated.co/">templated</a></p>
+          <h1><a href="."><span>Web</span>2</a></h1>
+          <h4> Második beadandó </h4>
+	<h4> Babar Kristóf és Fehér Donát </h4>
         </div>
         <div id="menu">
           <?php
@@ -44,14 +46,7 @@
           <div id="sidebar">
             <ul>
               <li>
-                <div id="search" >
-                  <form method="get" action="#">
-                    <div>
-                      <input type="text" name="s" id="search-text" value="" />
-                      <input type="submit" id="search-submit" value="Keres" />
-                    </div>
-                  </form>
-                </div>
+               
                 <div style="clear: both;">&nbsp;</div>
               </li>
               <?php
@@ -66,9 +61,7 @@
     </div>
     <!-- end #page -->
   </div>
-  <div id="footer">
-    <p>&copy; 2017 Web-programozás II. Design by <a href="http://templated.co/">templated</a>.</p>
-  </div>
+
   <!-- end #footer -->
 </body>
 </html>

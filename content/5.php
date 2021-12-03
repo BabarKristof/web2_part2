@@ -1,44 +1,60 @@
-<?php
-  include_once("includes/initial.php");
-?><!DOCTYPE html>
+
 <html>
 <head>
   <title>AJAX példák</title>
-  <script type="text/javascript" src="includes/jquery-2.1.3.min.js"></script>
-  <script type="text/javascript">
-    function valtozas() {
-      var thisKep = $(this);
-      var taz     = $(this).attr("id");
-      var vel     = Math.random;
-      $.ajax({
-        url:      "hivott.php",
-        data:     {a: taz, sid: vel},
-        type:     "GET",
-        dataType: "json",
-        success: function(valasz) {
-          if (valasz.hibakod !== 0) {
-            alert("Hiba történt!");
-          } else {
-            $(thisKep).attr({
-              src: valasz.src,
-              title: valasz.title
-            })
-          }
-        }
-      });
+  
+  <script type="text/javascript" src="js2/jquery.min.js"></script> 
+  <script type="text/javascript" src="js2/ajax.js"></script>
+ 
+
+  <style>
+    #informaciosdiv {
+      width: 400px;
     }
-    $(document).ready(function() {
-      $(".r_ikon").css("cursor", "pointer").click(valtozas);
-    });
-  </script>
+    #intezmenyinfo {
+      float: right;
+      border: 1px solid black;
+      width: 190px;
+      height: 100px;
+    }
+    .cimke{
+      display: inline-block;
+      width: 60px;
+      text-align: right;
+    }
+    span {
+      margin: 3px 5px;
+    }
+    label {
+      display: inline-block;
+      width: 70px;
+      text-align: right;
+    }
+    select {
+      width: 115px;
+    }
+  </style>
 </head>
 <body>
-  <h2>Termékek listája</h2>
-  <p>
-    Kattintson a <em>raktáron</em> ikonra a változtatáshoz!
-  </p>
-  <?php
-    echo tablaMegjelenit();
-  ?>
+  <h2>Ajax lekérdezés</h2>
+  <!--<h1>Felső fokú intézmények:</h1>-->
+    <div id = 'informaciosdiv'>
+      <div id = 'intezmenyinfo'>
+        <span class="cimke">Név:</span><span id="nev" class="adat"></span><br>
+        <span class="cimke">Cím:</span><span id="cim" class="adat"></span><br>
+        <span class="cimke">Telefon:</span><span id="tel" class="adat"></span><br>
+        <span class="cimke">E-mail:</span><span id="mail" class="adat"></span><br>
+      </div>
+      <label for='helysegcimke'>Helyseg:</label>
+      <select id = 'helysegselect'></select>
+      <br><br>
+      <label for = 'szalloda'>Szalloda:</label>
+      <select id = 'szallodaselect'></select>
+      <br><br>
+      <label for = 'tavaszcimke'>Tavasz:</label>
+      <select id = 'tavaszselect'></select>
+    </div>
+    
+
 </body>
 </html>

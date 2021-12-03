@@ -7,7 +7,7 @@
   $pid      = $page->GetPid();
   
   $registered = new Register();
- echo $_SESSION['szallodanev'];
+ 
  
   if (file_exists("content/".$pid."_pre.php"))
     include_once("content/".$pid."_pre.php");

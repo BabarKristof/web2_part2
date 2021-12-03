@@ -58,7 +58,7 @@ ul.sf-menu li li li.sfHover ul {
 	margin-bottom:	0; /*1em;*/
 }
 .sf-menu a {
-	border-right:	1px solid #241F1B; /*#BCA177;*/
+	border-right:	1px solid #4A3202; /*#BCA177;*/
 	/*border-top:		1px solid #CFBC92;*/
 	padding: 		0.7em 1.6em;         /* az 1.52 értéket kell módosítani a felsõ menü szélességéhez */
 	text-decoration:none;
@@ -67,10 +67,10 @@ ul.sf-menu li li li.sfHover ul {
 	color:        #132d43; /*#3E0100;*/
 }
 .sf-menu li {
-	background:	  #AB0D06; /*#15243E; #CFBC92; #315c8b; */
+	background:	  #4d3202; /*#15243E; #CFBC92; #315c8b; */
 }
 .sf-menu li li {
-	background:		#AB0D06; /*#15243E; #E1CFAB;*/
+	background:		#4d3202; /*#15243E; #E1CFAB;*/
   border-bottom: 1px solid #241F1B;
 }
 .sf-menu li li li {
@@ -78,7 +78,7 @@ ul.sf-menu li li li.sfHover ul {
 }
 .sf-menu li:hover, .sf-menu li.sfHover,
 .sf-menu a:focus, .sf-menu a:hover, .sf-menu a:active {
-	background:		#cb2d26; /*#273c65; #EDDDBB; #4f81bd; */
+	background:		#9e7c34; /*#273c65; #EDDDBB; #4f81bd; */
 	outline:		0;
 }
 
